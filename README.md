@@ -180,4 +180,4 @@ To make the project more realistic, ChatGPT was used to answer the requirement q
 - [ ] Maybe the Remix It function from thingiverse could be implemented.
 
 ## Application architecture
-![RecipeRadar Architecture components] (/Resources/README/01 AppArchitectureBasic.drawio.png 'Application architecture')
+![RecipeRadar Architecture components](/Resources/README/01_AppArchitectureBasic.drawio.png 'Application architecture')
