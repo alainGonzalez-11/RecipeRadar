@@ -20,7 +20,6 @@ function loadCarousel(recipes) {
   let recipeCount = 0;
   while (recipeCount < 3) {
     const recipe = recipes[Math.floor(Math.random() * recipes.length)];
-    console.log(recipe);
     if (validateRecipe(recipe)) {
       carousel.insertAdjacentHTML(
         "beforeend",
@@ -34,29 +33,28 @@ function loadCarousel(recipes) {
 
 /**
  * The function validates a recipe based on its aggregated rating.
- * @param recipe - The recipe object that needs to be validated. It is likely to have properties such
- * as AggregatedRating and image urls. The function is checking if the AggregatedRating property of the
- * recipe is equal to 5.
- * @returns a boolean value that indicates whether the AggregatedRating of the recipe is equal to 5 or
- * not.
+ * @param recipe - The recipe object that contains information about a recipe, including its aggregated
+ * rating.
+ * @returns The function `validateRecipe` returns a boolean value indicating whether the
+ * `AggregatedRating` property of the `recipe` object is greater than or equal to the
+ * `VALIDATION_RATING` constant, which is set to 5.
  */
 function validateRecipe(recipe) {
   // TODO: Validate image urls avoiding carousel getting no image recipes.
-  return recipe.AggregatedRating == 5;
+  const VALIDATION_RATING = 5;
+  return (recipe.AggregatedRating >= VALIDATION_RATING);
 }
 
+
 /**
- * The function creates HTML elements for a carousel slide using recipe data.
+ * The function creates HTML elements for a carousel using a recipe object and a recipe count.
  * @param recipe - An object containing information about a recipe, including its name, description,
  * and images.
- * @param recipeCount - The index of the recipe in the list of recipes. It is used to determine if the
- * carousel item should be set as active or not.
+ * @param recipeCount - The index of the recipe in the array of recipes.
  * @returns a string of HTML code that represents a carousel item for a recipe. The HTML code includes
- * an image, the recipe name, and description. The "active" class is added to the first recipe item to
- * indicate that it is the currently active item in the carousel.
+ * the recipe's image, name, and description.
  */
 function createCarouselElements(recipe, recipeCount) {
-  console.log(recipe.Images);
   let image = "";
   if (recipe.Images[0] == "c" && recipe.Images.length > 1) {
     image = recipe.Images[1];
@@ -67,7 +65,9 @@ function createCarouselElements(recipe, recipeCount) {
   if (recipeCount == 0) {
     activation = "active ";
   }
-  const text =
+  /* Traditional JS declaration.
+  
+  const carouselRecipeHTML =
     '<div class="carousel-item ' +
     activation +
     'image-crop"><img src="' +
@@ -78,8 +78,19 @@ function createCarouselElements(recipe, recipeCount) {
     recipe.Name +
     "</h5><p>" +
     recipe.Description +
-    "</p></div></div>\n\n";
-  return text;
+    "</p></div></div>\n\n"; */
+
+    // Declaration of HTML code using ES6 for improved readibility
+    const carouselRecipeHTML = `
+    <div class="carousel-item ${activation} image-crop">
+      <img src="${image}" onerror="handleImageError()" class="d-block w-100" alt="${recipe.Name}"/>
+      <div class="carousel-caption d-none d-sm-block">
+        <h5>${recipe.Name}</h5>
+        <p>${recipe.Description}</p>
+      </div>
+    </div>
+  `;
+   return carouselRecipeHTML;
 }
 
 /**
