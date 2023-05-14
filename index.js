@@ -1,3 +1,5 @@
+var recipeBook = []
+
 /**
  * The function loads a carousel with three random recipes from a JSON file, after validating each
  * recipe.
@@ -7,7 +9,8 @@ fetch("Resources\\Auxiliar files\\recipes.json")
   .then((response) => response.json())
   .then((recipes) => {
     // Data is now a JavaScript object
-
+    recipeBook = recipes;
+    console.log(recipeBook);
     loadCarousel(recipes);
   })
   .catch((error) => {
@@ -16,7 +19,6 @@ fetch("Resources\\Auxiliar files\\recipes.json")
 
 function loadCarousel(recipes) {
   const carousel = document.querySelector("#carousel-recipes");
-  console.log(carousel);
   let recipeCount = 0;
   while (recipeCount < 3) {
     const recipe = recipes[Math.floor(Math.random() * recipes.length)];
@@ -83,9 +85,9 @@ function createCarouselElements(recipe, recipeCount) {
     // Declaration of HTML code using ES6 for improved readibility
     const carouselRecipeHTML = `
     <div class="carousel-item ${activation} image-crop">
-      <img src="${image}" onerror="handleImageError()" class="d-block w-100" alt="${recipe.Name}"/>
+      <img src="${image}" onerror="handleImageError()" class="d-block w-100" alt="${recipe.Name}" onClick="viewRecipe(${recipe.RecipeId})"/>
       <div class="carousel-caption d-none d-sm-block">
-        <h5>${recipe.Name}</h5>
+        <h5  onClick="viewRecipe(${recipe.RecipeId})">${recipe.Name}</h5>
         <p>${recipe.Description}</p>
       </div>
     </div>
@@ -100,3 +102,12 @@ function handleImageError() {
   // Code to handle the error, such as displaying a fallback image or showing an error message
   console.log("Image not found or error occurred");
 }
+
+function viewRecipe(RecipeId){
+  localStorage.setItem('RecipeId', RecipeId);
+  console.log(localStorage.getItem('RecipeId'));
+  window.location.href = "recipe.html"; 
+  
+}
+
+

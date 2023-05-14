@@ -18,20 +18,20 @@ This project is part of the Computer Science Kata for Devf, it consists in creat
 
 ### Required functionalities
 - [ ] Use web technologies to build a website that sows a list of products or a product register which shows whatever has been registered.
-- [ ] Show at least 3 values for each product and it's image.
+- [X] Show at least 3 values for each product and it's image.
 - [ ] Use form elements to filter the data shown in the screen.
-- [ ] Create the views dinamically using JS.
+- [X] Create the views dinamically using JS.
 - [X] Use GRID/Flexbox, materialize or Bootstrap.
 - [X] Add a menu and a footer.
 - [X] Use Git, conventional commits and atomic commits.
 - [ ] Apply good practices for variable reach.
 
 ### Optional functionalities
-- [ ] Get the info from an array, localstorage or an API/JSON.
+- [X] Get the info from an array, localstorage or an API/JSON.
 - [ ] Navigation to other pages (Detail, contact, etc.)
 - [ ] Use githubpages.
-- [ ] Use constants for value comparison and understandable names for variables and functions.
-- [ ] Make a part of the functionality using JS and replicate it with ES6.
+- [X] Use constants for value comparison and understandable names for variables and functions.
+- [X] Make a part of the functionality using JS and replicate it with ES6.
 
 ### Disclaimer
 - To make the project more realistic, ChatGPT was used to answer the requirement questionnarie simulating that Andrew Rea (from Binging with Babish) and Alex (from the french guy cooking youtube channel) want to hire someone to build them a web page where they want to publish recepies where the user can search by ingredients, prepping time, kind of dish, etc. Includea section with recommendations according to user preferences.
