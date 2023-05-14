@@ -21,13 +21,14 @@
       src="https://kit.fontawesome.com/1254f6dd23.js"
       crossorigin="anonymous"
     ></script>
+    <script src="search.js"></script>
 
     <title>Recipe Radar</title>
   </head>
   <body>
     <header class="row custom-row bg-dark text-light p-2">
       <h1 class="p-1 col">Recipe Radar</h1>
-      <form class="row custom-row col align-items-center">
+      <form class="row custom-row col align-items-center" id="search-form">
         <input
           type="search"
           class="form-control rounded"
@@ -35,6 +36,7 @@
           placeholder="Search"
           aria-label="Search"
           aria-describedby="search-addon"
+          name="search-bar"
         />
         <button
           type="submit"
@@ -137,28 +139,9 @@
           </div>
         </div>
       </aside>
-      <aside class="w-75">
-        <p>Your search of</p>
-        <div class="d-flex flex-wrap">
-          <div class="card col-sm-6 col-md-4 col-lg-3">
-            <img
-              src="Resources/Index/fish.jpg"
-              class="card-img-top"
-              alt="card-group-image"
-            />
-            <div class="card-body">
-              <h5 class="card-title">Card title</h5>
-              <p class="card-text">
-                This is a wider card with supporting text below as a natural
-                lead-in to additional content. This content is a little bit
-                longer.
-              </p>
-            </div>
-            <div class="card-footer">
-              <small class="text-muted">Last updated 3 mins ago</small>
-            </div>
-          </div>
-        </div>
+
+      <aside class="w-75" id="recipe-cards">
+        <!--Loaded with JS-->
       </aside>
     </section>
 
@@ -194,4 +177,6 @@
       </div>
     </footer>
   </body>
+  
+  <script src="searchCall.js"></script>
 </html>

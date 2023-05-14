@@ -1,5 +1,6 @@
 var recipeBook = [];
 
+
 /**
  * The function loads a carousel with three random recipes from a JSON file, after validating each
  * recipe.
@@ -226,3 +227,4 @@ function createRatingHTML(recipe){
   recipeRating += `</div>`;
   return recipeRating;
 }
+

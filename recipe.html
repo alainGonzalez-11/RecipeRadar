@@ -27,23 +27,25 @@
   <body>
     <header class="row custom-row bg-dark text-light p-2">
       <h1 class="p-1 col" href="index.html">Recipe Radar</h1>
-      <form class="row custom-row col align-items-center">
-        <input
-          type="search"
-          class="form-control rounded"
-          id="search-bar"
-          placeholder="Search"
-          aria-label="Search"
-          aria-describedby="search-addon"
-        />
-        <button
-          type="submit"
-          class="btn btn-outline-primary"
-          id="search-submit"
-        >
-          Search
-        </button>
-      </form>
+      <form class="row custom-row col align-items-center" id="search-form">
+        <form class="row custom-row col align-items-center" id="search-form">
+          <input
+            type="search"
+            class="form-control rounded"
+            id="search-bar"
+            placeholder="Search"
+            aria-label="Search"
+            aria-describedby="search-addon"
+            name="search-bar"
+          />
+          <button
+            type="submit"
+            class="btn btn-outline-primary"
+            id="search-submit"
+          >
+            Search
+          </button>
+        </form>
       <div class="row custom-row col align-items-center justify-content-end">
         <p class="fs-4 text-light text-end">User</p>
       </div>
@@ -90,4 +92,6 @@
       </div>
     </footer>
   </body>
+  
+  <script src="searchCall.js"></script>
 </html>
