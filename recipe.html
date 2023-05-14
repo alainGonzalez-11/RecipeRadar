@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="style.css" />
+
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://kit.fontawesome.com/1254f6dd23.js"
+      crossorigin="anonymous"
+    ></script>
+
+    <title>Recipe Radar</title>
+  </head>
+  <body>
+    <header class="row custom-row bg-dark text-light p-2">
+      <h1 class="p-1 col">Recipe Radar</h1>
+      <form class="row custom-row col align-items-center">
+        <input
+          type="search"
+          class="form-control rounded"
+          id="search-bar"
+          placeholder="Search"
+          aria-label="Search"
+          aria-describedby="search-addon"
+        />
+        <button
+          type="submit"
+          class="btn btn-outline-primary"
+          id="search-submit"
+        >
+          Search
+        </button>
+      </form>
+      <div class="row custom-row col align-items-center justify-content-end">
+        <p class="fs-4 text-light text-end">User</p>
+      </div>
+    </header>
+
+    <section class="row custom-row">
+      <div class="p-3 w-75">
+        <img
+          src="https://img.sndimg.com/food/image/upload/w_555,h_416,c_fit,fl_progressive,q_95/v1/img/recipes/38/YUeirxMLQaeE1h3v3qnM_229%20berry%20blue%20frzn%20dess.jpg"
+          class="card-img-top"
+          alt="card-group-image"
+        />
+        <div class="card-body">
+          <h2 class="card-title">Low-Fat Berry Blue Frozen Dessert</h2>
+          <div class="card-text">
+            <p id="description" class="lead mb-3 mt-3">
+              Make and share this Low-Fat Berry Blue Frozen Dessert recipe from
+              Food.com.
+            </p>
+
+            <div id="tags" class="mb-5">
+              <button type="button" class="btn btn-dark btn-fit-content">
+                Dessert
+              </button>
+              <button type="button" class="btn btn-dark btn-fit-content">
+                Low Protein
+              </button>
+              <button type="button" class="btn btn-dark btn-fit-content">
+                Summer
+              </button>
+              <button type="button" class="btn btn-dark btn-fit-content">
+                Freezer
+              </button>
+            </div>
+
+            <div class="row">
+              <aside class="w-50">
+                <h3>Ingredients</h3>
+                <ul>
+                  <li>4 blueberries</li>
+                  <li>1/4 granulated sugar</li>
+                  <li> 1 vanilla yogurt</li>
+                  <li>1 lemon juice</li>
+                </ul>
+
+
+
+              </aside>
+              <aside class="w-50 card">
+                <table class="table table-borderless">
+                  <thead>
+                    <tr>
+                      <th>Rating</th>
+                      <th>
+                        <div class="rating-block">
+                          <span class="star" data-value="0.5">&#9733;</span>
+                          <span class="star" data-value="1">&#9733;</span>
+                          <span class="star" data-value="1.5">&#9733;</span>
+                          <span class="star" data-value="2">&#9733;</span>
+                          <span class="star" data-value="2.5">&#9733;</span>
+                        </div>
+                      </th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <th>Review Count</th>
+                      <td>4</td>
+                    </tr>
+                    <!-- Add more rows as needed -->
+                  </tbody>
+                </table>
+              </aside>
+            </div>
+          </div>
+        </div>
+
+        <h3>Recipe instructions</h3>
+        <ol>
+          <li>Toss 2 cups berries with sugar.</li>
+            <li>Let stand for 45 minutes, stirring occasionally.</li>
+            <li>Transfer berry-sugar mixture to food processor.</li>
+            <li>Add yogurt and process until smooth.</li>
+            <li>Strain through fine sieve. Pour into baking pan (or transfer to ice cream maker and process according to manufacturers' directions). Freeze uncovered until edges are solid but centre is soft.  Transfer to processor and blend until smooth again.</li>
+            <li>Return to pan and freeze until edges are solid.</li>
+            <li>Transfer to processor and blend until smooth again.</li>
+            <li>Fold in remaining 2 cups of blueberries.</li>
+            <li>Pour into plastic mold and freeze overnight. Let soften slightly to serve.</li>
+
+        </ol>
+
+        <div class="card-footer">
+          <small class="text-muted">Published by Dancer on 09-08-1999</small>
+        </div>
+      </div>
+      <div class="w-25 p-3">
+        <div class="card">
+          <img
+            src="Resources/Index/fish.jpg"
+            class="card-img-top"
+            alt="card-group-image"
+          />
+          <div class="card-body">
+            <h5 class="card-title">Card title</h5>
+            <p class="card-text">
+              This is a wider card with supporting text below as a natural
+              lead-in to additional content. This content is a little bit
+              longer.
+            </p>
+          </div>
+          <div class="card-footer">
+            <small class="text-muted">Last updated 3 mins ago</small>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <footer class="bg-dark text-light">
+      <div class="container py-4">
+        <div class="row">
+          <div class="col-12 text-center">
+            <h4>Contact Us</h4>
+            <p>Connect with us on social media:</p>
+            <ul class="list-inline">
+              <li class="list-inline-item">
+                <a href="#" target="_blank"><i class="fab fa-twitter"></i></a>
+              </li>
+              <li class="list-inline-item">
+                <a href="#" target="_blank"
+                  ><i class="fab fa-facebook-f"></i
+                ></a>
+              </li>
+              <li class="list-inline-item">
+                <a href="#" target="_blank"><i class="fab fa-instagram"></i></a>
+              </li>
+              <li class="list-inline-item">
+                <a href="#" target="_blank"
+                  ><i class="fab fa-linkedin-in"></i
+                ></a>
+              </li>
+              <li class="list-inline-item">
+                <a href="#" target="_blank"><i class="fab fa-github"></i></a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>
