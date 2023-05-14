@@ -4,8 +4,36 @@
 
 Develop a web application for the management of cooking recipes with search options by ingredients, time of preparation, and dish type, among others, is to provide a user-friendly platform for individuals who enjoy cooking to discover new recipes, save their favorite recipes, and organize their cooking activities efficiently. The application aims to streamline the recipe search process, facilitate the meal planning process, and improve the overall cooking experience for the user.
 
-## Disclaimer
+## Project Description
+This project is part of the Computer Science Kata for Devf, it consists in creating an application using HTML, CSS and JS that works as a product catalog and includes search and filtering features according to user selection.
 
+### Examples
+- Pokedex.
+- Movie catalog.
+- Superhero catalog.
+- Register form.
+- Medical appointment calendar.
+- Youtube clon.
+- Product (drugstore, supermarket, library, etc.) catalog.
+
+### Required functionalities
+- [ ] Use web technologies to build a website that sows a list of products or a product register which shows whatever has been registered.
+- [ ] Show at least 3 values for each product and it's image.
+- [ ] Use form elements to filter the data shown in the screen.
+- [ ] Create the views dinamically using JS.
+- [ ] Use GRID/Flexbox, materialize or Bootstrap.
+- [ ] Add a menu and a footer.
+- [ ] Use Git, conventional commits and atomic commits.
+- [ ] Apply good practices for variable reach.
+
+### Optional functionalities
+- [ ] Get the info from an array, localstorage or an API/JSON.
+- [ ] Navigation to other pages (Detail, contact, etc.)
+- [ ] Use githubpages.
+- [ ] Use constants for value comparison and understandable names for variables and functions.
+- [ ] Make a part of the functionality using JS and replicate it with ES6.
+
+### Disclaimer
 To make the project more realistic, ChatGPT was used to answer the requirement questionnarie simulating that Andrew Rea (from Binging with Babish) and Alex (from the french guy cooking youtube channel) want to hire someone to build them a web page where they want to publish recepies where the user can search by ingredients, prepping time, kind of dish, etc. Includea section with recommendations according to user preferences.
 
 ## Gathering of requirements

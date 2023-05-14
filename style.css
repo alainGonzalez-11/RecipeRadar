@@ -1,0 +1,29 @@
+.image-crop {
+    overflow: hidden; /* Crop the image */
+    height: 50vh; /* Set the height to 50% of the viewport height */
+}
+
+.custom-row {
+    margin: 0;
+}
+
+#search-submit {
+    width: 20%;
+}
+
+#search-bar {
+    width: 80%;
+}
+  
+p{
+    margin: 0;
+}
+
+.subheader{
+    padding: 2rem;
+}
+
+#new-recipe-button{
+    flex-grow: 0;
+    width: 25 rem;
+}
