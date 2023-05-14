@@ -21,9 +21,9 @@ This project is part of the Computer Science Kata for Devf, it consists in creat
 - [ ] Show at least 3 values for each product and it's image.
 - [ ] Use form elements to filter the data shown in the screen.
 - [ ] Create the views dinamically using JS.
-- [ ] Use GRID/Flexbox, materialize or Bootstrap.
-- [ ] Add a menu and a footer.
-- [ ] Use Git, conventional commits and atomic commits.
+- [X] Use GRID/Flexbox, materialize or Bootstrap.
+- [X] Add a menu and a footer.
+- [X] Use Git, conventional commits and atomic commits.
 - [ ] Apply good practices for variable reach.
 
 ### Optional functionalities
@@ -34,7 +34,9 @@ This project is part of the Computer Science Kata for Devf, it consists in creat
 - [ ] Make a part of the functionality using JS and replicate it with ES6.
 
 ### Disclaimer
-To make the project more realistic, ChatGPT was used to answer the requirement questionnarie simulating that Andrew Rea (from Binging with Babish) and Alex (from the french guy cooking youtube channel) want to hire someone to build them a web page where they want to publish recepies where the user can search by ingredients, prepping time, kind of dish, etc. Includea section with recommendations according to user preferences.
+- To make the project more realistic, ChatGPT was used to answer the requirement questionnarie simulating that Andrew Rea (from Binging with Babish) and Alex (from the french guy cooking youtube channel) want to hire someone to build them a web page where they want to publish recepies where the user can search by ingredients, prepping time, kind of dish, etc. Includea section with recommendations according to user preferences.
+- The recipes used in this project were gotten from Kaggle's "Food.com - Recipes and Reviews" dataset, which cointains over 500,000 recipes. To make it mor manageable in the first stage the data was converted to a JSON and truncated to 10,000 recipes; you can find the dataset in: https://www.kaggle.com/datasets/irkaal/foodcom-recipes-and-reviews?resource=download
+
 
 ## Gathering of requirements
 
