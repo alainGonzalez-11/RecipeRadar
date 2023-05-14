@@ -12,6 +12,7 @@ fetch("Resources\\Auxiliar files\\recipes.json")
     recipeBook = recipes;
     console.log(recipeBook);
     loadCarousel(recipes);
+    loadCards(recipes);
   })
   .catch((error) => {
     console.error("Error:", error);
@@ -116,4 +117,112 @@ function viewRecipe(RecipeId) {
   localStorage.setItem("RecipeId", RecipeId);
   console.log(localStorage.getItem("RecipeId"));
   window.location.href = "recipe.html";
+}
+
+
+
+
+function loadCards(recipes){
+  const cardSection = document.querySelector("#card-section");
+  let cardsHTML = "";
+
+  const MIN_RECIPE_COUNT = 4;
+  const MAX_CATEGORY_COUNT = 10;
+
+  const categories = Array.from(new Set(recipes.map(recipe => recipe.RecipeCategory)));
+
+  let randomCategories = getRandomItems(categories, MAX_CATEGORY_COUNT);
+
+  // Filter out categories with less than MIN_RECIPE_COUNT recipes
+  randomCategories = randomCategories.filter(category => {
+    const recipeCount = recipes.filter(recipe => recipe.RecipeCategory === category).length;
+    return recipeCount >= MIN_RECIPE_COUNT;
+  });
+
+  // If the number of categories is less than MAX_CATEGORY_COUNT, select additional categories
+  while (randomCategories.length < MAX_CATEGORY_COUNT) {
+    const remainingCategories = categories.filter(category => !randomCategories.includes(category));
+    const additionalCategories = getRandomItems(remainingCategories, MAX_CATEGORY_COUNT - randomCategories.length);
+    randomCategories.push(...additionalCategories);
+  }
+
+
+
+  randomCategories.forEach(CATEGORY_TO_FIND => {
+    cardsHTML += `
+      <div class="d-flex justify-content-center subheader">
+        <div class=""></div>
+        <h2 class="text-justify-center">Featured ${CATEGORY_TO_FIND} recipes.</h2>
+      </div>
+      <div class="card-group">
+    `
+    const filteredRecipes = recipes  
+    .filter(recipe => recipe.RecipeCategory === CATEGORY_TO_FIND)
+    .sort(() => Math.random() - 0.5)
+    .slice(0, 4);
+
+    filteredRecipes.forEach(foundRecipe => {
+      cardsHTML+=createCard(foundRecipe)
+    });
+
+    cardsHTML += `
+      </div>
+    `
+  });
+  cardSection.innerHTML = cardsHTML;
+  
+}
+
+function getRandomItems(array, count) {
+  const shuffled = array.sort(() => 0.5 - Math.random());
+  return shuffled.slice(0, count);
+}
+
+
+function createCard(recipe) {
+  const cardHTML = `
+      <div class="card col-sm-6 col-md-4 col-lg-3 m-2">
+        <img
+          src="${recipe.Images[0]}"
+          class="card-img-top image-crop-card clickable-text"
+          alt="card-group-image"
+          onClick="viewRecipe(${recipe.RecipeId})"
+          onerror="handleImageError()" 
+        />
+        <div class="card-body">
+          <h5 class="card-title clickable-text" onClick="viewRecipe(${recipe.RecipeId})">${recipe.Name}</h5>
+          <p class="card-text">
+            ${createRatingHTML(recipe)}
+            ${recipe.Description}
+          </p>
+        </div>
+        <div class="card-footer">
+          <small class="text-muted">Updated by ${recipe.AuthorName}</small>
+        </div>
+      </div>
+  `
+  return cardHTML;
+}
+
+/**
+ * The function creates HTML code for displaying a star rating based on a recipe's aggregated rating.
+ * @param recipe - The recipe object that contains information about a recipe, including its aggregated
+ * rating.
+ * @returns The function `createRatingHTML` returns a string of HTML code that displays a star rating
+ * for a recipe based on its `AggregatedRating` property.
+ */
+function createRatingHTML(recipe){
+  let recipeRating = `<div class="rating-block">`;
+  for (let i = 0; i < Math.ceil(recipe.AggregatedRating); i++) {
+    recipeRating += `<span class="star text-warning" data-value="${
+      i + 1
+    }}">&#9733;</span>`;
+  }
+  for (let i = Math.ceil(recipe.AggregatedRating); i < 5; i++) {
+    recipeRating += `<span class="star text-muted" data-value="${
+      i + 1
+    }}">&#9733;</span>`;
+  }
+  recipeRating += `</div>`;
+  return recipeRating;
 }

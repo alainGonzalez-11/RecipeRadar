@@ -3,6 +3,11 @@
     height: 50vh; /* Set the height to 50% of the viewport height */
 }
 
+.image-crop-card {
+    overflow: hidden; /* Crop the image */
+    height: 30vh; /* Set the height to 50% of the viewport height */
+}
+
 .custom-row {
     margin: 0;
 }
