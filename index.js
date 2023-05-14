@@ -1,4 +1,4 @@
-var recipeBook = []
+var recipeBook = [];
 
 /**
  * The function loads a carousel with three random recipes from a JSON file, after validating each
@@ -32,7 +32,6 @@ function loadCarousel(recipes) {
   }
 }
 
-
 /**
  * The function validates a recipe based on its aggregated rating.
  * @param recipe - The recipe object that contains information about a recipe, including its aggregated
@@ -44,9 +43,8 @@ function loadCarousel(recipes) {
 function validateRecipe(recipe) {
   // TODO: Validate image urls avoiding carousel getting no image recipes.
   const VALIDATION_RATING = 5;
-  return (recipe.AggregatedRating >= VALIDATION_RATING);
+  return recipe.AggregatedRating >= VALIDATION_RATING;
 }
-
 
 /**
  * The function creates HTML elements for a carousel using a recipe object and a recipe count.
@@ -82,17 +80,23 @@ function createCarouselElements(recipe, recipeCount) {
     recipe.Description +
     "</p></div></div>\n\n"; */
 
-    // Declaration of HTML code using ES6 for improved readibility
-    const carouselRecipeHTML = `
+  // Declaration of HTML code using ES6 for improved readibility
+  const carouselRecipeHTML = `
     <div class="carousel-item ${activation} image-crop">
-      <img src="${image}" onerror="handleImageError()" class="d-block w-100" alt="${recipe.Name}" onClick="viewRecipe(${recipe.RecipeId})"/>
-      <div class="carousel-caption d-none d-sm-block">
+      <img
+        src="${image}" 
+        onerror="handleImageError()" 
+        class="d-block w-100 clickable-text" 
+        alt="${recipe.Name}" 
+        onClick="viewRecipe(${recipe.RecipeId})"
+      />
+      <div class="carousel-caption d-none d-sm-block clickable-text">
         <h5  onClick="viewRecipe(${recipe.RecipeId})">${recipe.Name}</h5>
         <p>${recipe.Description}</p>
       </div>
     </div>
   `;
-   return carouselRecipeHTML;
+  return carouselRecipeHTML;
 }
 
 /**
@@ -103,11 +107,13 @@ function handleImageError() {
   console.log("Image not found or error occurred");
 }
 
-function viewRecipe(RecipeId){
-  localStorage.setItem('RecipeId', RecipeId);
-  console.log(localStorage.getItem('RecipeId'));
-  window.location.href = "recipe.html"; 
-  
+/**
+ * The function sets a recipe ID in local storage and redirects the user to a recipe page.
+ * @param RecipeId - The ID of a recipe that the user wants to view. This function sets the RecipeId in
+ * the browser's local storage and redirects the user to the recipe.html page.
+ */
+function viewRecipe(RecipeId) {
+  localStorage.setItem("RecipeId", RecipeId);
+  console.log(localStorage.getItem("RecipeId"));
+  window.location.href = "recipe.html";
 }
-
-
