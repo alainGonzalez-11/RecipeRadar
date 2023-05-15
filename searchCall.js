@@ -10,3 +10,7 @@ form.addEventListener('submit', function(event) {
     localStorage.setItem('search', searchField.value);
     window.location.href = "search.html";
   });
+
+function loadIndex() {
+  window.location.href = "index.html";
+}

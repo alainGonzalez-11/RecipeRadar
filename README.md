@@ -17,18 +17,18 @@ This project is part of the Computer Science Kata for Devf, it consists in creat
 - Product (drugstore, supermarket, library, etc.) catalog.
 
 ### Required functionalities
-- [ ] Use web technologies to build a website that sows a list of products or a product register which shows whatever has been registered.
+- [X] Use web technologies to build a website that sows a list of products or a product register which shows whatever has been registered.
 - [X] Show at least 3 values for each product and it's image.
-- [ ] Use form elements to filter the data shown in the screen.
+- [X] Use form elements to filter the data shown in the screen.
 - [X] Create the views dinamically using JS.
 - [X] Use GRID/Flexbox, materialize or Bootstrap.
 - [X] Add a menu and a footer.
 - [X] Use Git, conventional commits and atomic commits.
-- [ ] Apply good practices for variable reach.
+- [X] Apply good practices for variable reach.
 
 ### Optional functionalities
 - [X] Get the info from an array, localstorage or an API/JSON.
-- [ ] Navigation to other pages (Detail, contact, etc.)
+- [X] Navigation to other pages (Detail, contact, etc.)
 - [ ] Use githubpages.
 - [X] Use constants for value comparison and understandable names for variables and functions.
 - [X] Make a part of the functionality using JS and replicate it with ES6.

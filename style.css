@@ -36,3 +36,7 @@ p{
 .clickable-text {
     cursor: pointer;
 }
+
+.logo {
+    height: 4em;
+}

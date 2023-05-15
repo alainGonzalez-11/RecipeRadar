@@ -27,7 +27,9 @@
   </head>
   <body>
     <header class="row custom-row bg-dark text-light p-2">
-      <h1 class="p-1 col">Recipe Radar</h1>
+      <div class="col">
+        <img src="Resources/Index/RecipeRadar.png" alt="RecipeRadar" class="logo clickable-text" onclick="loadIndex()">
+      </div>
       <form class="row custom-row col align-items-center" id="search-form">
         <input
           type="search"
@@ -65,78 +67,105 @@
                 aria-expanded="false"
                 aria-controls="flush-collapseOne"
               >
-                Accordion Item #1
+                Review Rating
               </button>
             </h2>
             <div
               id="flush-collapseOne"
-              class="accordion-collapse collapse"
+              class="accordion-collapse "
               aria-labelledby="flush-headingOne"
               data-bs-parent="#accordionFlushExample"
             >
               <div class="accordion-body">
-                Placeholder content for this accordion, which is intended to
-                demonstrate the <code>.accordion-flush</code> class. This is the
-                first item's accordion body.
+                <div class="form-check">
+                  <input
+                    class="form-check-input"
+                    type="checkbox"
+                    id="stars5"
+                    value="stars5"
+                    onchange="filter()"
+                  />
+                  <label class="form-check-label" for="stars5">
+                    <span class="star text-warning" data-value="3">&#9733;</span>
+                    <span class="star text-warning" data-value="3">&#9733;</span>
+                    <span class="star text-warning" data-value="3">&#9733;</span>
+                    <span class="star text-warning" data-value="3">&#9733;</span>
+                    <span class="star text-warning" data-value="3">&#9733;</span>
+                  </label>
+                </div>
+
+                <div class="form-check">
+                  <input
+                    class="form-check-input"
+                    type="checkbox"
+                    id="stars4"
+                    value="stars4"
+                    onchange="filter()"
+                  />
+                  <label class="form-check-label" for="stars5">
+                    <span class="star text-warning" data-value="3">&#9733;</span>
+                    <span class="star text-warning" data-value="3">&#9733;</span>
+                    <span class="star text-warning" data-value="3">&#9733;</span>
+                    <span class="star text-warning" data-value="3">&#9733;</span>
+                    <span class="star text-muted" data-value="3">&#9733;</span>
+                  </label>
+                </div>
+
+                <div class="form-check">
+                  <input
+                    class="form-check-input"
+                    type="checkbox"
+                    id="stars3"
+                    value="stars3"
+                    onchange="filter()"
+                  />
+                  <label class="form-check-label" for="stars3">
+                    <span class="star text-warning" data-value="3">&#9733;</span>
+                    <span class="star text-warning" data-value="3">&#9733;</span>
+                    <span class="star text-warning" data-value="3">&#9733;</span>
+                    <span class="star text-muted" data-value="3">&#9733;</span>
+                    <span class="star text-muted" data-value="3">&#9733;</span>
+                  </label>
+                </div>
+
+                <div class="form-check">
+                  <input
+                    class="form-check-input"
+                    type="checkbox"
+                    id="stars2"
+                    value="stars2"
+                    onchange="filter()"
+                  />
+                  <label class="form-check-label" for="stars2">
+                    <span class="star text-warning" data-value="3">&#9733;</span>
+                    <span class="star text-warning" data-value="3">&#9733;</span>
+                    <span class="star text-muted" data-value="3">&#9733;</span>
+                    <span class="star text-muted" data-value="3">&#9733;</span>
+                    <span class="star text-muted" data-value="3">&#9733;</span>
+                  </label>
+                </div>
+
+                <div class="form-check">
+                  <input
+                    class="form-check-input"
+                    type="checkbox"
+                    id="stars1"
+                    value="stars1"
+                    onchange="filter()"
+                  />
+                  <label class="form-check-label" for="stars1">
+                    <span class="star text-warning" data-value="3">&#9733;</span>
+                    <span class="star text-muted" data-value="3">&#9733;</span>
+                    <span class="star text-muted" data-value="3">&#9733;</span>
+                    <span class="star text-muted" data-value="3">&#9733;</span>
+                    <span class="star text-muted" data-value="3">&#9733;</span>
+                  </label>
+                </div>
               </div>
             </div>
           </div>
-          <div class="accordion-item">
-            <h2 class="accordion-header" id="flush-headingTwo">
-              <button
-                class="accordion-button collapsed"
-                type="button"
-                data-bs-toggle="collapse"
-                data-bs-target="#flush-collapseTwo"
-                aria-expanded="false"
-                aria-controls="flush-collapseTwo"
-              >
-                Accordion Item #2
-              </button>
-            </h2>
-            <div
-              id="flush-collapseTwo"
-              class="accordion-collapse collapse"
-              aria-labelledby="flush-headingTwo"
-              data-bs-parent="#accordionFlushExample"
-            >
-              <div class="accordion-body">
-                Placeholder content for this accordion, which is intended to
-                demonstrate the <code>.accordion-flush</code> class. This is the
-                second item's accordion body. Let's imagine this being filled
-                with some actual content.
-              </div>
-            </div>
-          </div>
-          <div class="accordion-item">
-            <h2 class="accordion-header" id="flush-headingThree">
-              <button
-                class="accordion-button collapsed"
-                type="button"
-                data-bs-toggle="collapse"
-                data-bs-target="#flush-collapseThree"
-                aria-expanded="false"
-                aria-controls="flush-collapseThree"
-              >
-                Accordion Item #3
-              </button>
-            </h2>
-            <div
-              id="flush-collapseThree"
-              class="accordion-collapse collapse"
-              aria-labelledby="flush-headingThree"
-              data-bs-parent="#accordionFlushExample"
-            >
-              <div class="accordion-body">
-                Placeholder content for this accordion, which is intended to
-                demonstrate the <code>.accordion-flush</code> class. This is the
-                third item's accordion body. Nothing more exciting happening
-                here in terms of content, but just filling up the space to make
-                it look, at least at first glance, a bit more representative of
-                how this would look in a real-world application.
-              </div>
-            </div>
-          </div>
+          
+          
         </div>
       </aside>
 
@@ -177,6 +206,6 @@
       </div>
     </footer>
   </body>
-  
+
   <script src="searchCall.js"></script>
 </html>
